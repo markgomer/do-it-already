@@ -27,7 +27,7 @@ export const colors = {
     },
     purple: "#8284FA",
     purple_dark: "#5E60CE",
-    blue: "4EA8DE",
-    blue_dark: "1E6F9F",
+    blue: "#4EA8DE",
+    blue_dark: "#1E6F9F",
     danger: "#E25858",
 };
