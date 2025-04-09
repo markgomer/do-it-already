@@ -15,7 +15,8 @@ export function Input({ ...rest }) {
 
 const styles = StyleSheet.create({
     container: {
-        height: 54,
+        flex: 1,
+        // height: 54,
         backgroundColor: colors.gray[500],
         fontSize: 16,
         color: colors.gray[100],
