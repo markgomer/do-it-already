@@ -1,16 +1,32 @@
-import { View, Button, TouchableOpacityProps, StyleSheet } from "react-native";
+import {
+    View,
+    StyleSheet,
+    Pressable,
+    PressableProps
+} from "react-native";
 
-type Props = TouchableOpacityProps & {
-    title: string
+import { MaterialIcons } from "@expo/vector-icons";
+import { colors } from "@/constants/colors";
+
+type Props = PressableProps & {
+    icon: keyof typeof MaterialIcons.glyphMap,
 }
 
-export function AddButton({ title, ... rest }: Props) {
+export function AddButton({ icon, ...rest }: Props) {
+    const bg_color = (icon == "add-circle-outline" ? colors.blue : colors.danger)
+
     return (
         <View style={styles.container}>
-            <Button
-                title={title}
-                {...rest}
-            />
+            <Pressable
+                style={styles.button}
+                {... rest}
+            >
+                <MaterialIcons
+                    name="add-circle-outline"
+                    size={36}
+                    color={colors.dark.text}
+                />
+            </Pressable>
         </View>
     )
 }
@@ -18,6 +34,12 @@ export function AddButton({ title, ... rest }: Props) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        height: 54,
+        width: 54,
+        borderRadius: 8,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    button: {
     }
 })
